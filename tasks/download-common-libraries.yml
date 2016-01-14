@@ -1,0 +1,31 @@
+#
+# Hippo on Tomcat: Download Common Libraries
+#
+
+- name: Create the "common" directory for the common classloader
+  file:
+    path: "{{ tomcat_catalina_base }}/common/lib"
+    state: directory
+    owner: "{{ tomcat_system_user }}"
+    group: "{{ tomcat_system_group }}"
+    mode: go-w
+
+- name: Copy the Geronimo JTA JAR to the "common" directory
+  get_url:
+    url: "{{ hippo_jta_jar }}"
+    dest: "{{ tomcat_catalina_base }}/common/lib/geronimo-jta_1.1_spec-1.1.jar"
+
+- name: Download the JavaMail JAR to the "common" directory
+  get_url:
+    url: "{{ hippo_javamail_jar }}"
+    dest: "{{ tomcat_catalina_base }}/common/lib/mail-1.4.7.jar"
+
+- name: Download the JCR JAR to the "common" directory
+  get_url:
+    url: "{{ hippo_jcr_jar }}"
+    dest: "{{ tomcat_catalina_base }}/common/lib/jcr-2.0.jar"
+
+- name: Download the MySQL JAR to the "common" directory
+  get_url:
+    url: "{{ hippo_mysql_jar }}"
+    dest: "{{ tomcat_catalina_base }}/common/lib/mysql-connector-java-5.1.36.jar"

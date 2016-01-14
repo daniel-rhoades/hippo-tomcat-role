@@ -1,0 +1,23 @@
+- name: Create a "bin" directory under user home to hold start-up configuration scripts
+  file:
+    path: "{{ tomcat_system_home }}/bin"
+    state: directory
+    owner: "{{ tomcat_system_user }}"
+    group: "{{ tomcat_system_group }}"
+    mode: go-w
+
+- name: Copy "entrypoint" script to be run when the Docker container starts
+  copy:
+    src: entrypoint.sh
+    dest: "{{ tomcat_system_home }}/bin/entrypoint.sh"
+    owner: "{{ tomcat_system_user }}"
+    group: "{{ tomcat_system_group }}"
+    mode: ug+x
+
+- name: Copy "extract-distribution" script, used to deploy Hippo to Tomcat
+  copy:
+    src: extract-distribution.sh
+    dest: "{{ tomcat_system_home }}/bin/extract-distribution.sh"
+    owner: "{{ tomcat_system_user }}"
+    group: "{{ tomcat_system_group }}"
+    mode: ug+x

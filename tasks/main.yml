@@ -1,0 +1,13 @@
+#
+# Configures Tomcat for use with Hippo as per Hippo documentation:
+# http://www.onehippo.org/library/enterprise/installation-and-configuration/linux-installation-manual.html
+#
+---
+- name: Hippo CMS | Download Common Libraries
+  include: download-common-libraries.yml
+
+- name: Hippo CMS | Configure Tomcat for Hippo
+  include: configure-tomcat.yml
+
+- name: Hippo CMS | Copy configuration start-up scripts
+  include: configure-startup.yml

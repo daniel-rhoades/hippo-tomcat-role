@@ -1,0 +1,34 @@
+#
+# Configure Tomcat for Hippo
+#
+
+- name: Copy a templated "context.xml", using the default recommended context with environment specific JNDI details
+  copy:
+    src: context.xml
+    dest: "{{ tomcat_catalina_base }}/conf/context.xml"
+
+- name: Copy a "repository.xml", using the Hippo recommended settings
+  copy:
+    src: repository.xml
+    dest: "{{ tomcat_catalina_base }}/conf/repository.xml"
+
+- name: Copy a "setenv.sh", using the Hippo recommended settings
+  copy:
+    src: setenv.sh
+    dest: "{{ tomcat_catalina_base }}/bin/setenv.sh"
+    mode: ugo+x
+
+- name: Copy a "log4j.xml", using the Hippo recommended settings
+  copy:
+    src: log4j.xml
+    dest: "{{ tomcat_catalina_base }}/conf/log4j.xml"
+
+- name: Copy a modified "catalina.policy" to allow the CMS application to open the RMI port, using the Hippo recommended settings
+  copy:
+    src: catalina.policy
+    dest: "{{ tomcat_catalina_base }}/conf/catalina.policy"
+
+- name: Copy a modified "catalina.properties" to add the shared lib path to the classloader, using the Hippo recommended settings
+  copy:
+    src: catalina.properties
+    dest: "{{ tomcat_catalina_base }}/conf/catalina.properties"
