@@ -6,7 +6,7 @@ Currently only supports a MySQL Content Repository.
 
 Requirements
 ------------
-Note, Tomcat is required to be installed first, for an appropriate role see [danielrhoades.tomcat](https://github.com/daniel-rhoades/tomcat-role).
+Note, Tomcat is required to be installed first, for an appropriate role see [daniel-rhoades.tomcat](https://github.com/daniel-rhoades/tomcat-role).
 
 Role Variables
 --------------
@@ -22,7 +22,7 @@ Role Variables
 
 Dependencies
 ------------
-danielrhoades.tomcat
+daniel-rhoades.tomcat
 
 Example Playbook
 ----------------
