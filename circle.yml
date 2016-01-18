@@ -12,5 +12,5 @@ test:
     - mkdir /tmp/hippo-distributions
     - wget https://github.com/daniel-rhoades/hippo-gogreen/releases/download/v0.1/gogreen-0.1.0-SNAPSHOT-distribution.tar.gz -O /tmp/hippo-distributions/gogreen-0.1.0-SNAPSHOT-distribution.tar.gz
   post:
-    - docker run -d -p 8080:8080 --volume /tmp/hippo-distributions:/opt/cms/distributions:ro --link gogreen-mysql:mysql -e HIPPO_CONTENTSTORE_USERNAME="gogreen" -e HIPPO_CONTENTSTORE_PASSWORD="password" -e HIPPO_CONTENTSTORE_URL="jdbc:mysql://\\$MYSQL_PORT_3306_TCP_ADDR:\\$MYSQL_PORT_3306_TCP_PORT/gogreen?characterEncoding=utf8" hippo-tomcat_trusty:$CIRCLE_SHA1; sleep 60
+    - docker run -d -p 8080:8080 --volume /tmp/hippo-distributions:/opt/cms/distributions:ro --link gogreen-mysql:mysql -e HIPPO_CONTENTSTORE_USERNAME="gogreen" -e HIPPO_CONTENTSTORE_PASSWORD="password" -e HIPPO_CONTENTSTORE_URL="jdbc:mysql://\$MYSQL_PORT_3306_TCP_ADDR:\$MYSQL_PORT_3306_TCP_PORT/gogreen?characterEncoding=utf8" hippo-tomcat_trusty:$CIRCLE_SHA1; sleep 60
     - curl --retry 10 --retry-delay 5 -v http://localhost:8080/site
