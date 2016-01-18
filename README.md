@@ -1,6 +1,6 @@
 hippo-tomcat-role
 =================
-Ansible role for configuring Tomcat to run Hippo as per Hippo documentation [configure the application server (Apache Tomcat on Linux)](http://www.onehippo.org/library/enterprise/installation-and-configuration/linux-installation-manual.html).
+Tomcat instance configured to run Hippo CMS as per Hippo's documentation [configure the application server (Apache Tomcat on Linux)](http://www.onehippo.org/library/enterprise/installation-and-configuration/linux-installation-manual.html).
 
 Currently only supports a MySQL Content Repository.
 
