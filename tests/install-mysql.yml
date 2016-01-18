@@ -8,6 +8,9 @@
 #    env:
 #      MYSQL_ROOT_PASSWORD: password
 
+- name: Install a Telnet client to check the database state
+  apt: name=telnet
+
 - name: Wait for the MySQL server to be available
   shell: telnet localhost 3306 || true
   register: result
