@@ -1,6 +1,6 @@
 ---
 - name: Setup test dependencies
-  hosts: all
+  hosts: localhost
   sudo: True
   tasks:
     - name: Install MySQL and configure a test database instance
