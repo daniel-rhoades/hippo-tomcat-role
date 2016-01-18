@@ -1,9 +1,0 @@
-- name: Create the "/tmp/hippo-distributions" directory
-  file:
-    path: "/tmp/hippo-distributions"
-    state: directory
-
-- name: Download "daniel-rhoades/hippo-gogreen" demo project
-  get_url:
-    url: https://github.com/daniel-rhoades/hippo-gogreen/releases/download/v0.1/gogreen-0.1.0-SNAPSHOT-distribution.tar.gz
-    dest: /tmp/hippo-distributions/gogreen-0.1.0-SNAPSHOT-distribution.tar.gz
