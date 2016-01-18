@@ -22,4 +22,4 @@
   apt: name=mysql-client-5.5
 
 - name: Create an empty GoGreen database instance with a username and password
-  command: "/vagrant/tests/create-gogreen-db.sh"
+  command: "tests/create-gogreen-db.sh"
