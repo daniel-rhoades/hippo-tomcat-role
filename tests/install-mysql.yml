@@ -1,12 +1,12 @@
-- name: Setup MySQL server as a Docker container from the official image
-  docker:
-    state: reloaded
-    image: mysql:latest
-    ports:
-      - 3306:3306
-    name: "gogreen-mysql"
-    env:
-      MYSQL_ROOT_PASSWORD: password
+#- name: Setup MySQL server as a Docker container from the official image
+#  docker:
+#    state: reloaded
+#    image: mysql:latest
+#    ports:
+#      - 3306:3306
+#    name: "gogreen-mysql"
+#    env:
+#      MYSQL_ROOT_PASSWORD: password
 
 - name: Wait for the MySQL server to be available
   shell: telnet localhost 3306 || true
