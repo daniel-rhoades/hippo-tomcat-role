@@ -3,8 +3,8 @@
   hosts: localhost
   sudo: True
   tasks:
-    - name: Install MySQL and configure a test database instance
-      include: install-mysql.yml
+    #- name: Install MySQL and configure a test database instance
+    #  include: install-mysql.yml
 
     - name: Download Hippo demo distribution
       include: download-hippo-gogreen.yml
