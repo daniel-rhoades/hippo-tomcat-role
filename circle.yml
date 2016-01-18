@@ -8,6 +8,7 @@ dependencies:
   pre:
     - pip install ansible
     - docker build  -f tests/Dockerfile-ubuntu14.04 -t hippo-tomcat_trusty:$CIRCLE_SHA1 .
+    - apt-get install python-apt -y -q
 
 test:
   pre:
