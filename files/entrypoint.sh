@@ -2,5 +2,14 @@
 
 set -eu
 
-extract-distribution.sh ${USER_HOME}/distributions ${CATALINA_BASE}
+if [ $HIPPO_DISTRO_URL ]
+then
+  echo 'Distribution found'
+  wget $HIPPO_DISTRO_URL -P ${USER_HOME}/downloads
+  extract-distribution.sh ${USER_HOME}/downloads ${CATALINA_BASE}
+else
+  echo 'No distribution'
+  extract-distribution.sh ${USER_HOME}/distributions ${CATALINA_BASE}
+fi
+
 exec $@

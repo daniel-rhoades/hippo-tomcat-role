@@ -21,3 +21,13 @@
     owner: "{{ tomcat_system_user }}"
     group: "{{ tomcat_system_group }}"
     mode: ug+x
+
+- name: Install wget for optionally downloading the distribution from a given URL
+  apt: name=wget state=present
+
+- name: Create a "downloads" directory to hold downloaded distributions
+  file:
+    path: "{{ tomcat_system_home }}/downloads"
+    state: directory
+    owner: "{{ tomcat_system_user }}"
+    group: "{{ tomcat_system_group }}"
