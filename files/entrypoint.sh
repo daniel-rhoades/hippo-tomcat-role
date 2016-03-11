@@ -2,7 +2,7 @@
 
 set -eu
 
-if [ -n "${HIPPO_DISTRO_URL}" ]
+if [ -n "${HIPPO_DISTRO_URL+1}" ]
 then
   echo 'Distribution found'
   wget $HIPPO_DISTRO_URL -P ${USER_HOME}/downloads
