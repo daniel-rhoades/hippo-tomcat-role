@@ -28,6 +28,8 @@ Example Playbook
 ----------------
 For a usage example see [hippo-tomcat-template](https://github.com/daniel-rhoades/hippo-tomcat-template).
 
+The Hippo distribution can also be supplied via a URL parameter - HIPPO_DISTRO_URL
+
 License
 -------
 MIT
